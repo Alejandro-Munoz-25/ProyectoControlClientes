@@ -1,0 +1,17 @@
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+spring:
+  datasource:
+    username: nombreUsuarioBDHeroku
+    password: passBDHeroku
+    url: jdbc:postgresql://hostBDHeroku/nombreBDHeroku
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: create-drop
+server:
+  port: ${PORT:8080}

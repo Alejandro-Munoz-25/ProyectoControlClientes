@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head th:replace="layout/plantilla :: head">
+        <title>Login</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style=" min-height: 100vh;" class="d-flex flex-column">
+        <header th:replace='layout/plantilla::header'></header>
+        <section id="actions" class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <!--Se pueden agregar Botones-->
+                </div>
+            </div>
+        </section>
+        <section id="login" class="mb-4">
+            <div class="container">
+                <div class="row d-block mb-4">
+                    <div class="col-md-7 mx-auto">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Login</h4>
+                            </div>
+                            <div class="card-body text-center">
+                                <form method="POST" th:action="@{/login}">
+                                    <div class="form-group row" >
+                                        <label class="col-sm-3 col-form-label" for="username" >[[#{login.user}]]</label>
+                                        <div class="col-sm-9">
+                                            <input  class="form-control" type="text" name="username" id="username"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="password">[[#{login.pass}]]</label>
+                                        <div class="col-sm-9">
+                                            <input  class="form-control" type="password" name="password" id="password"/>
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="submit" class="btn btn-primary w-75 text-center mt-4 mx-auto"  value="Login"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer th:fragment='footer' style="display: contents" >
+            <div  class="page-footer bg-warning text-white p-sm-auto p-md-5 mt-auto" >
+                <div class="container ">
+                    <div class="col">
+                        <p class="lead text-center">
+                            <a th:href='@{/login/(lang=es)}'>ES</a> |
+                            <a th:href='@{/login/(lang=en)}'>EN</a>
+                            <br/>
+                            <span>[[#{plantilla.pie-pagina}]] &COPY; [[#{plantilla.pie-paginan}]]</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </body>
+</html>

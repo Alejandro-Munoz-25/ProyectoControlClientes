@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
+        <title th:text='#{modificar.titulo}'></title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="https://kit.fontawesome.com/d20cee3f3d.js" crossorigin="anonymous"></script>
+    </head>
+    <body style="text-align: center; align-content: center;display: block ;background: #dedede">
+        <header th:replace='layout/plantilla::header'></header>
+        <section th:replace="layout/editarCliente :: editarCliente"></section>
+        <footer >
+            <div  class="page-footer bg-warning text-white p-sm-auto p-md-5 mt-auto">
+                <div class="container ">
+                    <div class="col">
+                        <p class="lead text-center" th:if="${persona.idPersona!=null}">
+                            <a th:href="@{/editar/} + ${persona.idPersona}+@{/(lang=es)}">ES</a>
+                            <a th:href='@{/editar/} + ${persona.idPersona}+@{/(lang=en)}'>EN</a>
+                            <br/>
+                            <span>[[#{plantilla.pie-pagina}]] &COPY; [[#{plantilla.pie-paginan}]]</span>
+                        </p>
+                        <p class="lead text-center" th:if="${persona.idPersona==null}">    
+                            <a th:href='@{/agregar/(lang=es)}'>ES</a>
+                            <a th:href='@{/agregar/(lang=en)}'>EN</a>
+                            <br/>
+                            <span>[[#{plantilla.pie-pagina}]] &COPY; [[#{plantilla.pie-paginan}]]</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

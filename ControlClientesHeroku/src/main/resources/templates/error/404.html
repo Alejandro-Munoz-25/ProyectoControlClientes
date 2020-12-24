@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="/layout/plantilla :: head">
+        <title>ERROR 403</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </head>
+    <body style="background-color: #FFBB31">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 mt-4 text-center">
+                    <h2>404</h2>
+                    <h3>[[#{accion.404}]] </h3>
+                    <br/>
+                </div>
+                <img  th:src="@{/img/psyduck.gif}" alt="mail-icon" style="width: 400px;height: 400px" class="rounded mx-auto d-block" />
+
+                <div class="col-12 mt-4 text-center">
+                    <a th:href="@{/}"> 
+                        <i class="fas fa-undo" style="font-size: 20px;color: black"> [[#{accion.regresar}]]</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
